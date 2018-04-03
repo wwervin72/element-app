@@ -11,6 +11,9 @@
 		name: 'App',
 		components: {
 			eHeader
+		},
+		created () {
+			this.$store.dispatch('setSeller');
 		}
 	}
 </script>

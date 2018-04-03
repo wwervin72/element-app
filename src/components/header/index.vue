@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="content_wrapper">
 			<div class="avatar">
-				<img src="" alt="">
+				<img width="64" height="64" :src="$store.state.seller.avatar">
 			</div>
 		</div>
 	</div>
