@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+body, html {
+	line-height: 1;
+	font-weight: 200;
+	font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif;
+}
+
+.clearfix {
+	display: inline-block;
+	&::after {
+		display: block;
+		content: '';
+		height: 0;
+		line-height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+@media ($WBDPR: $DPRMINVALUE), ($DPR: $DPRMINVALUE) {
+	.border_1px {
+		&::after {
+			transform: scaleY(0.7);
+		}
+	}
+}
+
+@media ($WBDPR: $DPRMAXVALUE), ($DPR: $DPRMAXVALUE) {
+	.border_1px {
+		&::after {
+			transform: scaleY(0.5);
+		}
+	}
+}
