@@ -20,8 +20,8 @@
 }
 
 @mixin bg-image ($url) {
-	background-image: url($url + '@2x.png');
-	@media ($WBDPR: $DPRMAXVALUE),($DPR: $DPRMAXVALUE) {
-		background-image: url($url + "@3x.png")
+	background-image: url('assets/img/' + $url + '@2x.png');
+	@media ($WBDPR: $DPRMAXVALUE), ($DPR: $DPRMAXVALUE) {
+		background-image: url('assets/img/' + $url + "@3x.png")
 	}
 }
