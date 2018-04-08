@@ -36,7 +36,7 @@
 					<div class="detail_main">
 						<h1 class="name">{{seller.name}}</h1>
 						<div class="star_wrapper">
-							<!-- <star :size="48" :score="seller.score"></star> -->
+							<star :size="48" :score="seller.score"></star>
 						</div>
 						<div class="title">
 							<div class="line"></div>
@@ -68,6 +68,7 @@
 </template>
 
 <script>
+	import Star from '../star';
 	export default {
 		name: 'E-header',
 		data () {
@@ -75,6 +76,9 @@
 				classMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee'],
 				detailShow: false
 			}
+		},
+		components: {
+			Star
 		},
 		computed: {
 			seller () {
