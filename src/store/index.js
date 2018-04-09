@@ -13,6 +13,9 @@ export default new vuex.Store({
 			state.seller = value;
 		}
 	},
+	getters: {
+		seller: state => state.seller
+	},
 	actions: {
 		setSeller ({ commit, state }) {
 			return new Promise((resolve, reject) => {
