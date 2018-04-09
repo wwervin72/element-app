@@ -5,3 +5,9 @@ export function fetchSeller () {
 		url: '/seller'
 	});
 };
+
+export function queryGoods () {
+	return request({
+		url: '/goods'
+	});
+};
