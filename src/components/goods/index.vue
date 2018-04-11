@@ -13,8 +13,8 @@
 							current: currentIndex === index
 						}">
 						<span class="text border_1px">
-							<span v-if="item.type > 0" class="icon" :class="classMap[item.type]"></span>
-							{{item.name}}
+							<span v-if="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
+							<span class="good_name"></span>
 						</span>
 					</li>
 				</ul>
@@ -40,7 +40,7 @@
 									<span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
 								</div>
 								<div class="cartcontrol_wrapper">
-									<!-- <cartcontrol @add="addFood" :food="food"></cartcontrol> -->
+									<cart-control @add="addFood" :food="food"></cart-control>
 								</div>
 							</div>
 						</li>
@@ -65,11 +65,13 @@
 	import { queryGoods } from '../../api/fetch';
 	import food from '../food';
 	import shopCart from '../shopCart';
+	import cartControl from '../cartcontrol';
 	export default {
 		name: 'goods',
 		components: {
 			food,
-			shopCart
+			shopCart,
+			cartControl
 		},
 		data () {
 			return {
@@ -230,6 +232,10 @@
 					vertical-align: middle;
 					@include border-1px(rgba(7, 17, 27, 0.1));
 					font-size: 12px;
+				}
+				.good_name {
+					font-size: 12px;
+					vertical-align: middle;
 				}
 			}
 		}
