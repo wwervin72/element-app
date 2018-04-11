@@ -30,7 +30,7 @@
 					</transition>
 				</div>
 			</div>
-			<transition>
+			<transition name="fold">
 				<div class="shopcart_list" v-show="listShow">
 					<div class="list_header">
 						<h1 class="title">购物车</h1>
@@ -52,7 +52,7 @@
 				</div>
 			</transition>
 		</div>
-		<transition>
+		<transition name="fade">
 			<div class="list_mask" @click="hideList" v-if="listShow"></div>
 		</transition>
 	</div>
@@ -161,13 +161,13 @@
 		methods: {
 			drop(el) {
 				for (let i = 0; i < this.balls.length; i++) {
-				let ball = this.balls[i];
-				if (!ball.show) {
-					ball.show = true;
-					ball.el = el;
-					this.dropBalls.push(ball);
-					return;
-				}
+					let ball = this.balls[i];
+					if (!ball.show) {
+						ball.show = true;
+						ball.el = el;
+						this.dropBalls.push(ball);
+						return;
+					}
 				}
 			},
 			hideList() {
@@ -345,11 +345,11 @@
 			z-index: 200;
 			transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41);
 			.inner {
-			width: 16px;
-			height: 16px;
-			border-radius: 50%;
-			background: rgb(0, 160, 220);
-			transition: all 0.4s linear;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background: rgb(0, 160, 220);
+				transition: all 0.4s linear;
 			}
 		}
 	}

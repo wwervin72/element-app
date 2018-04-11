@@ -152,8 +152,13 @@
 					el = menuList[index];
 				this.meunScroll.scrollToElement(el, 300, 0, -100);
 			},
-			addFood () {
-
+			addFood (target) {
+				this.drop(target);
+			},
+			drop (target) {
+				this.$nextTick(() => {
+					this.$refs.shopcart.drop(target);
+				});
 			},
 			selectedFood () {
 

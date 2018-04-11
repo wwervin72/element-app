@@ -20,7 +20,7 @@
 			}
 		},
 		methods: {
-			addCart () {
+			addCart (event) {
 				if (!event._constructed) {
 					return;
 				}
@@ -31,7 +31,7 @@
 				}
 				this.$emit('add', event.target);
 			},
-			decreaseCart () {
+			decreaseCart (event) {
 				if (!event._constructed) {
 					return;
 				}
