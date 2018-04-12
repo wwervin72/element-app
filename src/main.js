@@ -7,6 +7,9 @@ import './style/reset.scss';
 import './style/base.scss';
 import './style/icon.scss';
 
+import { formatDate } from './utils';
+Vue.filter('formatDate', formatDate);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

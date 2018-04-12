@@ -78,7 +78,8 @@
 				goods: [],
 				listHeight: [],
 				scrollY: 0,
-				classMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+				classMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee'],
+				selectedFood: {}
 			}
 		},
 		computed: {
@@ -115,7 +116,7 @@
 					el = foodList[index];
 				this.foodsScroll.scrollToElement(el, 300);
 			},
-			selectFood () {
+			selectFood (food, event) {
 				if (!event._constructed) {
 					return;
 				}
@@ -159,9 +160,6 @@
 				this.$nextTick(() => {
 					this.$refs.shopcart.drop(target);
 				});
-			},
-			selectedFood () {
-
 			}
 		},
 		created () {
